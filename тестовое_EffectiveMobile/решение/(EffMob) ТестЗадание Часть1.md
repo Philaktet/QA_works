@@ -1,6 +1,6 @@
 Тест-задание на вакансию [“QA manual тестировщика (Junior)”](https://docs.google.com/document/u/0/d/1Nd_njS7kT9OQEQe2EFTTHL6sCdNDui2ImuoMa3vE-X0/mobilebasic)
 
-Задание №1
+**Задание №1**
 
 - # **Часть 1:** Анализ и уточнение:
 
