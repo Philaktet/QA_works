@@ -1,8 +1,11 @@
 # QA Works | Портфолио тестировщика
 
+![Open to Work](https://img.shields.io/badge/Ищу_работу-QA_тестировщик-brightgreen)  
 ![Learning in Progress](https://img.shields.io/badge/status-learning-blue) 
 ![QA Portfolio](https://img.shields.io/badge/QA-Portfolio-green)
 ![Cypress](https://img.shields.io/badge/Cypress-5%20tests-yellow)
+[![Telegram](https://img.shields.io/badge/Telegram-@Philaktet-blue?logo=telegram)](https://t.me/Philaktet)
+
 
 Репозиторий с практическими работами по тестированию (ручное и автоматизированное).
 
