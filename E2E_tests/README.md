@@ -29,3 +29,4 @@
     cd ./E2E_tests
 3. Запустите тесты:
     yarn start
+4. В Cyppress нажмите E2E Testing --> выберите Chrome, нажмите кнопку Start E2E Testing in Chrome
