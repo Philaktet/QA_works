@@ -1,0 +1,28 @@
+# Игнорируем зависимости
+node_modules/
+
+# Игнорируем файлы, созданные Cypress
+cypress/downloads/
+cypress/screenshots/
+cypress/videos/
+
+# Игнорируем файлы IDE и системы
+.DS_Store
+.idea/
+.vscode/
+
+# Игнорируем логи и временные файлы
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Игнорируем файлы окружения (если есть)
+.env
+.env.local
+.env.*.local
+
+# Игнорируем автоматически генерируемые файлы
+dist/
+build/
+*.tmp
+*.bak
