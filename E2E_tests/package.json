@@ -1,0 +1,12 @@
+{
+  "name": "cypress_fresh",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^14.5.2"
+  }
+}
