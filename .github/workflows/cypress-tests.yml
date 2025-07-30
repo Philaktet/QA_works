@@ -18,9 +18,10 @@ jobs:
           node-version: 22.17.1
 
       - name: Install dependencies
+        working-directory: ./E2E_tests
 
         run: yarn install --frozen-lockfile
 
       - name: Run Cypress tests
-
+        working-directory: ./E2E_tests
         run: yarn test
