@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "cypress open",
-    "test": "cross-env-shell \"cypress run --quiet | grep -E '(error|fail|✖)' || echo 'All tests passed'\""
+    "test": "node -e \"const cp = require('child_process'); cp.exec('cypress run --quiet', (err, stdout) => { console.log(stdout.match(/error|fail|✖/) ? stdout.match(/(error|fail|✖).*/gi).join('\\n') : 'All tests passed'); })\""
   },
   "devDependencies": {
     "cross-env": "^10.0.0",
