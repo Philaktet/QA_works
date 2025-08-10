@@ -8,6 +8,7 @@
     "test": "cross-env-shell \"cypress run --quiet | grep -E '(error|fail|✖)' || echo 'All tests passed'\""
   },
   "devDependencies": {
+    "cross-env": "^10.0.0",
     "cypress": "^14.5.2"
   }
 }
