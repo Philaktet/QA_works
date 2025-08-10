@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "cypress open",
-    "test": "cypress run --quiet | grep -E '(error|fail|✖)' || echo \"All tests passed\""
+    "test": "cross-env-shell \"cypress run --quiet | grep -E '(error|fail|✖)' || echo 'All tests passed'\""
   },
   "devDependencies": {
     "cypress": "^14.5.2"
