@@ -23,5 +23,5 @@ jobs:
       - name: Run Cypress tests
 
         working-directory: ${{ env.WORKING_DIR }}
-        run: yarn test --quiet 2>&1 | grep -E '(error|fail|✖)' || echo "All tests passed"
+        run: yarn test
 
