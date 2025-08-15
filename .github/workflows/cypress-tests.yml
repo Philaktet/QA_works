@@ -23,6 +23,7 @@ jobs:
       - name: Run Cypress
         uses: cypress-io/github-action@v5
         with:
+          auto-cancel-after-failures: 1
           working-directory: ./E2E_tests
 
       - name: Update PR status
