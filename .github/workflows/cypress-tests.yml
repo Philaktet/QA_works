@@ -11,6 +11,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            ~/.cache/Cypress
+          key: ${{ runner.os }}-cypress-${{ hashFiles('yarn.lock') }}
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -23,7 +31,6 @@ jobs:
       - name: Run Cypress
         uses: cypress-io/github-action@v5
         with:
-          auto-cancel-after-failures: 1
           working-directory: ./E2E_tests
 
       - name: Update PR status
