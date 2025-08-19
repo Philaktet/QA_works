@@ -25,13 +25,23 @@ jobs:
         with:
           node-version: 22.17.1
           cache: "yarn"
+          cache-dependency-path: ${{ env.WORKING_DIR }}/yarn.lock
+
+      # Кеширование node_modules и Cypress
+      - name: Cache dependencies and Cypress
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ env.WORKING_DIR }}/node_modules
+            ~/.cache/Cypress
+          key: ${{ runner.os }}-cypress-${{ hashFiles('${{ env.WORKING_DIR }}/yarn.lock') }}
 
       - name: Install dependencies
         working-directory: ${{ env.WORKING_DIR }}
         run: yarn install --frozen-lockfile
 
       - name: Run Cypress tests with fail-fast
-        working-directory: ./E2E_tests
+        working-directory: ${{ env.WORKING_DIR }}
         run: yarn cypress run --browser chrome
         env:
           CYPRESS_FAIL_FAST_STRATEGY: "run"
