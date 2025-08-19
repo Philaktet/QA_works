@@ -8,7 +8,6 @@
     "test": "node scripts/test-runner.js"
   },
   "devDependencies": {
-    "cross-env": "^10.0.0",
     "cypress": "^14.5.2"
   }
 }
