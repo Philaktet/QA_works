@@ -1,12 +1,12 @@
 name: Cypress Tests
 on:
+  workflow_dispatch:
   pull_request:
     branches: [main]
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    timeout-minutes: 10 
     env:
       WORKING_DIR: ./E2E_tests
       CYPRESS_NO_COMMAND_LOG: 1  
@@ -20,6 +20,7 @@ jobs:
         with:
           node-version: 22.17.1
           cache: 'yarn'  
+          cache-dependency-path: E2E_tests/yarn.lock
 
       - name: Install dependencies
         working-directory: ${{ env.WORKING_DIR }}
