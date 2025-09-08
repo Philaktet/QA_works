@@ -9,7 +9,7 @@ describe('Wikipedia Navigation Test', () => {
         // 2. Проверяем основные пункты меню (без точных URL)
         cy.contains('Заглавная страница')
           .should('exist')
-        cy.contains('сокисобаки') // поменял "Содержание" на сокисобаки
+        cy.contains('Содержание') 
           .should('exist')
         cy.contains('Избранные статьи')
           .should('exist')
