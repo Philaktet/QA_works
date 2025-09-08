@@ -6,23 +6,35 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    env:  
+    env:
       WORKING_DIR: ./E2E_tests
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 22.17.1
-          cache: 'yarn'
-          cache-dependency-path: E2E_tests/yarn.lock
+
+      # Кеширование node_modules и Cypress
+      - name: Cache dependencies and Cypress
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.WORKING_DIR }}/node_modules
+            ~/.cache/Cypress
+          key: ${{ runner.os }}-cypress-${{ hashFiles('${{ env.WORKING_DIR }}/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cypress-
 
       - name: Install dependencies
         working-directory: ${{ env.WORKING_DIR }}
-        run: yarn install --frozen-lockfile --prefer-offline
+        run: yarn install --frozen-lockfile
 
-      - name: Run Cypress tests
+      - name: Run Cypress tests with fail-fast
         working-directory: ${{ env.WORKING_DIR }}
-        run: yarn test
+        run: yarn cypress run --browser chrome
+        env:
+          CYPRESS_FAIL_FAST_STRATEGY: "run"
+          CYPRESS_FAIL_FAST_PLUGIN: true
