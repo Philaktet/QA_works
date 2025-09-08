@@ -1,11 +1,12 @@
 {
   "name": "cypress_fresh",
+  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "start": "cypress open",
-    "test": "cypress run"
+    "test": "node scripts/test-runner.js"
   },
   "devDependencies": {
     "cypress": "^14.5.2"
